@@ -1,6 +1,10 @@
 use anyhow::Result;
 use gtk4;
 use std::time::Duration;
+#[cfg_attr(
+    not(all(feature = "mpv", not(target_os = "macos"))),
+    allow(unused_imports)
+)]
 use tracing::{debug, error, trace, warn};
 
 #[cfg(feature = "gstreamer")]
